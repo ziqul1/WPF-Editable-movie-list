@@ -1,0 +1,26 @@
+﻿<Window x:Class="Zadanie5.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Zadanie5"
+        mc:Ignorable="d"
+        Title="Okna dialogowe" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>   
+        <ToolBar DockPanel.Dock="Top" Grid.Row="0">
+            <Button Click="dodajmodal">Dodaj</Button>
+            <Separator/>
+            <Button Click="edytujmodal" IsEnabled="False" Name="edytujButton">Edytuj</Button>
+            <Separator/>
+            <Button Click="usun_click" IsEnabled="False" Name="usunButton">Usuń</Button>
+            <Separator/>
+            <Button Click="podglad_click" IsEnabled="False"  Name="podgladButton">Podgląd</Button>
+        </ToolBar>
+        <ListBox Name="listboxdata" Grid.Row="1" ItemsSource="{Binding listOfFilms}"  SelectionChanged="listboxdata_SelectionChanged"  />
+
+    </Grid>
+</Window>
